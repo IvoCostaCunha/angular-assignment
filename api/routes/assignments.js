@@ -43,8 +43,8 @@ function getAssignment(req, res){
 function postAssignment(req, res){
     let assignment = new Assignment();
     assignment.id = req.body.id;
-    assignment.nom = req.body.nom;
-    assignment.dateDeRendu = req.body.dateDeRendu;
+    assignment.name = req.body.name;
+    assignment.date = req.body.date;
     assignment.rendu = req.body.rendu;
 
     console.log("POST assignment reçu :");
@@ -54,7 +54,7 @@ function postAssignment(req, res){
         if(err){
             res.send('cant post assignment ', err);
         }
-        res.json({ message: `${assignment.nom} saved!`})
+        res.json({ message: `${assignment.name} saved!`})
     })
 }
 
